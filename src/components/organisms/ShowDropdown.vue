@@ -1,7 +1,18 @@
+<template>
+  <div class="dorpdown-container">
+    <div class="dropdown-trigger" @click="toggle">
+      {{ selected?.label || 'Select a Show' }}
+    </div>
+
+    <DropdownList v-if="open" :options="shows" @select="onSelect" />
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue';
 import DropdownList from '../molecules/DropdownList.vue';
 import type { OptionData } from '../atoms/DropdownOption.vue';
+const activeId = computed(() => shows[activeIndex.value].id);
 
 //Mock Broadway shows
 const shows = ref<OptionData[]>([

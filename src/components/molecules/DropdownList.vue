@@ -1,16 +1,28 @@
 <template>
-  <div class="dropdown-list">
+  <ul
+    class="dropdown-list"
+    id="show-list"
+    role="listbox"
+    tabindex="0"
+    :aria-activedescendant="activeId"
+    :style="{ display: isOpen ? 'block' : 'none' }"
+  >
     <DropdownOption
-      v-for="o in options"
+      v-for="o in props.options"
       :key="o.id"
       :option="o"
       @select="choose"
     />
-  </div>
+  </ul>
 </template>
 
 <script setup lang="ts">
 import DropdownOption, { type OptionData } from '../atoms/DropdownOption.vue';
+import { computed, ref } from 'vue';
+
+const isOpen = ref(false);
+const activeIndex = ref(0);
+const selectedIndex = ref(0);
 
 const props = defineProps<{
   options: OptionData[];
@@ -29,5 +41,6 @@ function choose(option: OptionData) {
   border: 1px solid #aaa;
   width: 200px;
   background: #fff;
+  color: black;
 }
 </style>

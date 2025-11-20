@@ -1,11 +1,22 @@
 <template>
-  <div class="dropdown-option" @click="select">
+  <li class="dropdown-option" role="option" :id="option.id" @click="select">
+    <div
+      :id="option.id"
+      :aria-selected="option.number === selectedIndex"
+      :class="{ active: option.number === activeIndex }"
+    ></div>
     {{ option.label }}
-  </div>
+  </li>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const selectedIndex = ref(0);
+const activeIndex = ref(0);
+
 export interface OptionData {
+  number: number;
   id: string;
   label: string;
 }
@@ -27,6 +38,7 @@ function select() {
   padding: 8px 12px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
+  color: #000;
 }
 
 .dropdown-option:hover {

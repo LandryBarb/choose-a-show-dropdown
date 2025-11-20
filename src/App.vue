@@ -1,11 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ShowDropdown from './components/organisms/ShowDropdown.vue';
+</script>
 
 <template>
-  <template>
-    <div class="app">
-      <h1>Select a Broadway Show</h1>
-    </div>
-  </template>
+  <div class="app">
+    <h1>Select a Broadway Show</h1>
+    <ShowDropdown />
+  </div>
 </template>
 
 <style scoped>
