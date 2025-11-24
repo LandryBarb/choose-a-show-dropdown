@@ -15,6 +15,6 @@ defineProps<Props>();
     :style="{ display: isOpen ? 'block' : 'none' }"
     v-bind="$attrs"
   >
-    <slot />
+    <slot></slot>
   </ul>
 </template>

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="dorpdown-container">
     <div class="dropdown-trigger" @click="toggle">
       {{ selected?.label || 'Select a Show' }}
@@ -12,7 +12,8 @@
 import { ref } from 'vue';
 import DropdownList from '../molecules/DropdownList.vue';
 import type { OptionData } from '../atoms/DropdownOption.vue';
-const activeId = computed(() => shows[activeIndex.value].id);
+
+
 
 //Mock Broadway shows
 const shows = ref<OptionData[]>([
@@ -51,4 +52,4 @@ function onSelect(option: OptionData) {
   margin-top: 1rem;
   font-size: 1rem;
 }
-</style>
+</style> -->
