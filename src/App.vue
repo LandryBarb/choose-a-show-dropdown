@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import ShowDropdown from './components/organisms/ShowDropdown.vue';
+import GenreDropdown from './components/organisms/GenreDropdown.vue';
+
+
 </script>
 
 <template>
   <div class="app">
     <h1>Select a Broadway Show</h1>
-    <ShowDropdown />
+   <GenreDropdown />
   </div>
 </template>
 
